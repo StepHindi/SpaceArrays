@@ -14,18 +14,17 @@ public class MyDraw extends View {
 
 	public MyDraw(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		makeSky();
 	}
 
-	Paint paint = new Paint();
+	Sky sky = new Sky();
 	Bitmap rocketImage = BitmapFactory.decodeResource(getResources(), R.drawable.rocket);
 	Rocket rocket = new Rocket(300, 300, rocketImage);
-
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
-		
-		drawSky(canvas);
+
+
+		sky.draw(canvas);
 		rocket.draw(canvas);
 		rocket.move();
 		
